@@ -1,15 +1,15 @@
 ### PROGRESS TRACKER
 ## API
-- [x]   Api Read
-- [ ]   Api Create
-- [ ]   Api Update
-- [ ]   Api Delete
-- [ ]   Api Action
-- [ ]   Api Count
-- [ ]   Api Group
+- [x]   API Read
+- [ ]   API Create
+- [ ]   API Update
+- [ ]   API Delete
+- [ ]   API Action
+- [ ]   API Count
+- [ ]   API Group
 
 ## Metadata
-- [ ]   Api Version
+- [ ]   API Version
 
 ## Transaction
 - [ ]   Error Handler
