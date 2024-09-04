@@ -181,6 +181,28 @@ namespace Odoo
 
             return Post(method, model, args, kwargs);
         }
+
+        public static JsonNode? Delete(
+            string model,
+            int[] recordIds,
+            Object? context = null
+        )
+        {
+            const string method = "unlink";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
+            Object kwargs = new
+            {
+                context = context
+            };
+            Object[] args = new Object[] { recordIds };
+
+            return Post(method, model, args, kwargs);
         }
+
     }
 }
