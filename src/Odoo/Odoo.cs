@@ -137,9 +137,27 @@ namespace Odoo
             return Post(method, model, args, kwargs);
         }
 
-        public static JsonNode? Create()
+        public static JsonNode? Create(
+            string model,
+            Object[] vals,
+            Object? context = null
+        )
         {
-            return null;
+            const string method = "create";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
+            Object kwargs = new
+            {
+                context         = context
+            };
+            Object[] args = new Object[] { vals };
+
+            return Post(method, model, args, kwargs);
+        }
         }
     }
 }
