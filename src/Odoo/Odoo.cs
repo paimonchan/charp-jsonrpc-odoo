@@ -1,11 +1,6 @@
 ﻿using RestSharp;
 using Flurl;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using Newtonsoft.Json;
-using System.Reflection.Metadata;
 using System.Text.Json.Nodes;
-using System;
 
 namespace Odoo
 {
@@ -132,6 +127,11 @@ namespace Odoo
             }
 
             return Post(method, model, args, kwargs);
+        }
+
+        public static JsonNode? Create()
+        {
+            return null;
         }
     }
 }
