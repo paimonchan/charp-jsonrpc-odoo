@@ -25,8 +25,8 @@ public class Test
     {
         JsonRPC.Configure(new Credential
         {
-            userid      = 0, // user id from odoo menu `user/groups`
-            username    = "" // user name from odoo menu `user/groups`,
+            userid      = 0, // user id from odoo menu `user & companies`
+            username    = "" // user name from odoo menu `user & companies`,
             password    = "" // api key from odoo,
             database    = "" // database name,
             uri         = "" // odoo url (include the port for ex: 443)
