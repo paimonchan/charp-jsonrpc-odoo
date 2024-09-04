@@ -11,11 +11,11 @@ namespace Odoo
 {
     public class Credential : ICloneable
     {
-        public required int uid { get; set; }
-        public required string database { get; set; }
+        public required int userid      { get; set; }
         public required string username { get; set; }
         public required string password { get; set; }
-        public required string uri { get; set; }
+        public required string database { get; set; }
+        public required string uri      { get; set; }
 
         public object Clone()
         {
@@ -27,7 +27,14 @@ namespace Odoo
 
     public class JsonRPC
     {
-        private static Credential cred { get; set; }
+        private static Credential cred { get; set; } = new Credential
+        {
+            userid              = 0,
+            username            = "",
+            password            = "",
+            database            = "",
+            uri                 = "",
+        };
 
         private static Object[] ConstructParams(string method, string model, Object[]? args = null, Object? kwargs = null)
         {
@@ -43,7 +50,7 @@ namespace Odoo
             Object[] param = new Object[]
             {
                 cred.database,
-                cred.uid,
+                cred.userid,
                 cred.password,
                 model,
                 method,
@@ -60,14 +67,14 @@ namespace Odoo
 
             var body = new
             {
-                jsonrpc = "2.0",
-                method = "call",
-                id = 1, // TODO: do random id here
-                Params = new
+                jsonrpc         = "2.0",
+                method          = "call",
+                id              = 1, // TODO: do random id here
+                Params          = new
                 {
-                    service = "object",
-                    method = "execute_kw",
-                    args = param,
+                    service     = "object",
+                    method      = "execute_kw",
+                    args        = param,
                 }
             };
 
@@ -113,9 +120,9 @@ namespace Odoo
             const string method = "search_read";
             Object kwargs = new
             {
-                limit = limit,
-                offset = offset,
-                fields = fields,
+                limit           = limit,
+                offset          = offset,
+                fields          = fields,
             };
 
             Object[]? args = null;
