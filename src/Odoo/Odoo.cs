@@ -158,6 +158,29 @@ namespace Odoo
 
             return Post(method, model, args, kwargs);
         }
+
+        public static JsonNode? Update(
+            string model,
+            int[] recordIds,
+            Object val,
+            Object? context = null
+        )
+        {
+            const string method = "write";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
+            Object kwargs = new
+            {
+                context = context
+            };
+            Object[] args = new Object[] { recordIds, val };
+
+            return Post(method, model, args, kwargs);
+        }
         }
     }
 }
