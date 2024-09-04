@@ -125,6 +125,7 @@ namespace Odoo
                 limit           = limit,
                 offset          = offset,
                 fields          = fields,
+                context         = context,
             };
 
             Object[]? args = null;
