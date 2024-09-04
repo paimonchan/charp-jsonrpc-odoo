@@ -1,9 +1,9 @@
 ### PROGRESS TRACKER
 ## API
 - [x]   API Read
-- [ ]   API Create
-- [ ]   API Update
-- [ ]   API Delete
+- [x]   API Create
+- [x]   API Update
+- [x]   API Delete
 - [ ]   API Action
 - [ ]   API Count
 - [ ]   API Group
