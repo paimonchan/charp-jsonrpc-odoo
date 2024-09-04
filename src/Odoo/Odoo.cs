@@ -109,10 +109,17 @@ namespace Odoo
             Object[]? domain = null,
             String[]? fields = null,
             int limit = 0,
-            int offset = 0
+            int offset = 0,
+            Object? context = null
         )
         {
             const string method = "search_read";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
             Object kwargs = new
             {
                 limit           = limit,
