@@ -10,6 +10,8 @@
 
 ## Metadata
 - [ ]   Api Version
+- [ ]   Api List Table
+- [ ]   Api List Column
 
 ## Transaction
 - [ ]   Error Handler
