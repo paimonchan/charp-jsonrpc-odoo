@@ -220,5 +220,55 @@ namespace Odoo
 
             return Read(model, domain, fields);
         }
+
+        public static JsonNode? Field(string modelRef)
+        {
+            const string model = "ir.model.fields";
+
+            string[] fields = new string[] {
+                "id",
+                "name",
+                "model",
+                "ttype",
+                "selection_ids",
+                "relation_table",
+            };
+            Object[] domain = new object[] {
+                new Object[] {"model", "=", modelRef}
+            };
+
+            var res =  Read(model, domain, fields).AsObject();
+
+            var result = res["result"];
+            foreach (var field in result.AsArray())
+            {
+                if (field["selection_ids"].AsArray().Count() == 0)
+                {
+                    continue;
+                }
+                var fieldIds = new List<int>() { (int)field["id"] };
+                var selections = Selection(fieldIds);
+                field["selection_ids"] = selections["result"].DeepClone();
+            }
+
+            return result;
+        }
+
+        public static JsonNode? Selection(List<int> fieldIds)
+        {
+            const string model = "ir.model.fields.selection";
+
+            string[] fields = new string[] {
+                "id",
+                "name",
+                "sequence",
+                "value",
+            };
+            Object[] domain = new object[] {
+                new Object[] {"field_id", "in", fieldIds}
+            };
+
+            return Read(model, domain, fields);
+        }
     }
 }
