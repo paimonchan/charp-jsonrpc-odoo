@@ -16,6 +16,10 @@
 ## Transaction
 - [ ]   Error Handler
 
+## Documentation
+- [ ]    Doc Step By Step to Setup Odoo SaaS
+- [ ]    Doc Step By Step to Get Credential
+
 # HOW TO USE
 
 ## Example
