@@ -204,5 +204,21 @@ namespace Odoo
             return Post(method, model, args, kwargs);
         }
 
+        public static JsonNode? Model()
+        {
+            const string model = "ir.model";
+
+            string[] fields = new string[] { 
+                "id",
+                "name",
+                "model"
+            };
+            Object[] domain = new object[] {
+                new Object[] {"transient", "=", false}
+
+            };
+
+            return Read(model, domain, fields);
+        }
     }
 }
