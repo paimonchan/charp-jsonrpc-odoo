@@ -297,5 +297,42 @@ namespace Odoo
 
             return Post(method, model, args, kwargs);
         }
+
+        public static JsonNode? Group(
+            string model,
+            Object[]? domain = null,
+            String[] groupby = null,
+            String[] fields = null,
+            int limit = 0,
+            int offset = 0,
+            bool lazy = true,
+            Object? context = null
+        )
+        {
+            const string method = "read_group";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
+            Object kwargs = new
+            {
+                lazy = lazy,
+                limit = limit,
+                offset = offset,
+                fields = fields,
+                groupby = groupby,
+                context = context,
+            };
+
+            Object[]? args = null;
+            if (domain != null)
+            {
+                args = new object[] { domain };
+            }
+
+            return Post(method, model, args, kwargs);
+        }
     }
 }
