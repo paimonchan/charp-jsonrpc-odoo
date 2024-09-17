@@ -237,7 +237,7 @@ namespace Odoo
                 new Object[] {"model", "=", modelRef}
             };
 
-            var res =  Read(model, domain, fields).AsObject();
+            var res = Read(model, domain, fields).AsObject();
 
             var result = res["result"];
             foreach (var field in result.AsArray())
