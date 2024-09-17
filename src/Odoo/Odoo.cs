@@ -270,5 +270,32 @@ namespace Odoo
 
             return Read(model, domain, fields);
         }
+
+        public static JsonNode? Count(
+            string model,
+            Object[]? domain = null,
+            Object? context = null
+        )
+        {
+            const string method = "search_count";
+
+            if (context == null)
+            {
+                context = new { };
+            }
+
+            Object kwargs = new
+            {
+                context = context,
+            };
+
+            Object[]? args = null;
+            if (domain != null)
+            {
+                args = new object[] { domain };
+            }
+
+            return Post(method, model, args, kwargs);
+        }
     }
 }
