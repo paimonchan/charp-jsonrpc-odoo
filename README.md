@@ -5,8 +5,8 @@
 - [x]   Api Update
 - [x]   Api Delete
 - [ ]   Api Action
-- [ ]   Api Count
-- [ ]   Api Group
+- [x]   Api Count
+- [x]   Api Group
 
 ## Metadata
 - [ ]   Api Version
