@@ -18,13 +18,14 @@
 
 ## Documentation
 - [x]    Doc Step By Step to Setup Odoo SaaS
-- [ ]    Doc Step By Step to Get Credential
+- [X]    Doc Step By Step to Get Credential
 
 # HOW TO USE
 ## Credential
 Before jumping into the example, here some guide how to get the credential so you can use the example smoothly
 
 - Deploy Odoo Server: [Link](https://dev.to/paimonchan/how-to-try-odoo-without-self-deploy-5e7g)
+- Get Credentials: [Link](https://dev.to/paimonchan/how-to-get-odoo-credential-for-api-32dh)
 
 ## Example
 ```csharp
