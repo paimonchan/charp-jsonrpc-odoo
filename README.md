@@ -17,10 +17,14 @@
 - [ ]   Error Handler
 
 ## Documentation
-- [ ]    Doc Step By Step to Setup Odoo SaaS
+- [x]    Doc Step By Step to Setup Odoo SaaS
 - [ ]    Doc Step By Step to Get Credential
 
 # HOW TO USE
+## Credential
+Before jumping into the example, here some guide how to get the credential so you can use the example smoothly
+
+- Deploy Odoo Server: [Link](https://dev.to/paimonchan/how-to-try-odoo-without-self-deploy-5e7g)
 
 ## Example
 ```csharp
